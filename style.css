@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  word-spacing: 2%;
+}
+p {
+  color: #777777;
+  word-spacing: 2%;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+.Main-Container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+.left-sid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.215);
+}
+.left-sid p {
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+.left-sid h2 {
+  font-weight: 500;
+}
+.HeroFace {
+  width: 36%;
+  height: 50%;
+  border-radius: 50%;
+  background-image: url(./assets/Hero.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: .3em solid rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tickGif{
+    width: 2em;
+    height: 2em;
+    background-color: #4E9459;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -1em;
+    left: 46%;
+    padding: .3em;
+    display: none;
+    
+}
+.detection{
+    height: 18em;
+    display: block;
+    
+}
+.DetectionGreen{
+    height: 18em;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.HeroFace.animate-border {
+    animation: border-animation 2s forwards;
+  }
+ /* .left-sid .HeroImage{
+  width: 36%;
+  height: 50%;
+  border-radius: 50%;
+  border: .3em solid rgb(182, 65, 65);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ } */
+.left-sid button {
+  padding: 1em;
+  width: 10em;
+  border-radius: 0.5em;
+  margin-top: 2em;
+  background-color: #4e9459;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+.left-sid button:hover {
+  background-color: transparent;
+  color: #4e9459;
+  border: 2px solid #4e9459;
+}
+
+/* right side working here */
+
+.Right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10%;
+}
+.RightHeading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.Alert-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Alert-section p{
+    font-size: 12px;
+}
+.AlertItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* scanner Animation */
+
+.ocrloader {
+  width: 260px;
+  height: 255px;
+  -webkit-transform: translateX(-50%);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 30%;
+}
+
+.ocrloader span {
+  position: absolute;
+  left: 21px;
+  top: 0;
+  width: 86%;
+  height: 5px;
+  background-color: #4e9459;
+  box-shadow: 0 0 10px 1px #4e9459, 0 0 1px 1px #4e9459;
+  z-index: 1;
+  transform: translateY(98px);
+  animation: move 1.7s cubic-bezier(0.15, 0.54, 0.76, 0.74);
+  animation-iteration-count: infinite;
+}
+
+.ocrloader:before,
+.ocrloader:after,
+.ocrloader em:after,
+.ocrloader em:before {
+  border-color: #4e9459;
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 46px;
+  border-style: solid;
+  border-width: 0px;
+}
+.ocrloader:before {
+  left: 0;
+  top: 0;
+  border-left-width: 5px;
+  border-top-width: 5px;
+  border-radius: 5px 0 0 0;
+}
+.ocrloader:after {
+  right: 0;
+  top: 0;
+  border-right-width: 5px;
+  border-top-width: 5px;
+  border-radius: 0 5px 0 0;
+}
+.ocrloader em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 5px;
+  border-bottom-width: 5px;
+  border-radius: 0 0 0 5px;
+}
+.ocrloader em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  border-radius: 0 0 5px 0;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    transform: translateY(230px);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(170px);
+  }
+}
+
+/* animation of border Hero face Border*/
+
+
+@keyframes border-animation {
+    100% {
+      border-color: transparent;
+      border-width: 0.4em;
+      border-style: solid;
+      border-top-color: #4E9459;
+    }
+    100% {
+      border-top-color: #4E9459;
+    }
+    100% {
+      border-right-color: #4E9459;
+    }
+    100% {
+      border-bottom-color: #4E9459;
+    }
+    100% {
+      border-left-color: #4E9459;
+    }
+  }
+  
+  .HeroFace.animate-border {
+    animation: border-animation 2s forwards;
+  }
+
+   @media screen and (max-width: 1025px) {
+    .Main-Container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .left-sid{
+        border: none;
+        text-align: center;
+        display: none;
+        opacity: 0; 
+        transition: opacity 1s ease-in-out;
+    }
+    .HeroFace {
+        width: 80%;
+        height: 100%;
+        border-radius: 50%;
+       
+      }
+      .detection{
+        width: 16em;
+        height: 20em;
+        padding: .4em;
+        align-items: center;
+        display: block;
+        
+    }
+    .DetectionGreen{
+        width: 16em;
+        height: 20em;
+        display: none;
+        padding: .4em;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+
+    /* rightsie reponsive in here */
+    .Right-side {
+        height: 100vh;
+        justify-content: space-around;
+        padding-top: 0;
+        /* display: flex;  */
+        display: flex;
+      }
+      .ocrloader {
+        width: 260px;
+        height: 295px;
+        display: block;
+       
+      }
+    
+    .AlertItems img{
+        width: 3em;
+      }
+  
+  }
+
+
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      display: flex;
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      display: none;
+    }
+  }
