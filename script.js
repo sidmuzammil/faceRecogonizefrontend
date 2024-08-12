@@ -50,29 +50,27 @@ function handleResponsiveLayout() {
   const detectionGreen = document.querySelector('.DetectionGreen');
 
   if (window.innerWidth <= 1025) {
-    // Set initial visibility
     rightSide.style.display = 'flex';
     leftSide.style.display = 'none';
-    leftSide.style.opacity = '0'; // Initial opacity
+    leftSide.style.opacity = '0'; 
 
-    // Transition after 5 seconds
     setTimeout(() => {
       rightSide.style.display = 'none';
       leftSide.style.display = 'flex';
 
-      // Add opacity transition for left side
-      leftSide.style.opacity = '1'; // Set opacity to 1
-      leftSide.style.transition = 'opacity 0.5s ease-in-out'; // Smooth transition
+ 
+      leftSide.style.opacity = '1'; 
+      leftSide.style.transition = 'opacity 0.5s ease-in-out'; 
     }, 3000);
   } else {
-    // Reset to default when screen is larger than 1025px
+    
     rightSide.style.display = 'flex';
     leftSide.style.display = 'flex';
-    detectionGreen.style.opacity = '1'; // Ensure opacity is reset
+    detectionGreen.style.opacity = '1'; 
   }
 }
 
-// Trigger on page load and window resize
+
 window.addEventListener('load', handleResponsiveLayout);
 window.addEventListener('resize', handleResponsiveLayout);
 

@@ -120,8 +120,8 @@ p {
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  display: none; /* Initially hidden */
-  z-index: 1000; /* Make sure it's above other content */
+  display: none; 
+  z-index: 1000; 
 }
 
 .RightHeading-section {
