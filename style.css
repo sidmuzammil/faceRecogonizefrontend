@@ -96,7 +96,7 @@ p {
   border: none;
   transition: 0.3s ease-in-out;
 }
-.left-sid button:hover {
+.left-sid button:focus {
   background-color: transparent;
   color: #4e9459;
   border: 2px solid #4e9459;
@@ -200,6 +200,18 @@ p {
   border-bottom-width: 5px;
   border-radius: 0 0 5px 0;
 }
+
+#camera-feed {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: .8em;
+  left: .8em;
+  object-fit: cover;
+  border-radius: 5px;
+  z-index: 0;
+}
+
 
 @keyframes move {
   0%,

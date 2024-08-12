@@ -1,21 +1,33 @@
 const takeSelfieButton = document.querySelector('.left-sid button');
 const heroFaceElement = document.querySelector('.HeroFace');
+const tickGif = document.querySelector('.tickGif');
+const detection = document.querySelector('.detection');
+const detectionGreen = document.querySelector('.DetectionGreen');
 
 takeSelfieButton.addEventListener('click', function() {
-    // Add the animate-border class to trigger the border animation
-    heroFaceElement.classList.add('animate-border');
+    if (takeSelfieButton.textContent === 'Take Selfie') {
+        // this if statemant is taking selfie 
+        heroFaceElement.classList.add('animate-border');
+        tickGif.style.display = 'block';
+        detection.style.display = 'none';
+        detectionGreen.style.display = 'block';
 
-    // Show the tick GIF and hide the original detection image
-    document.querySelector('.tickGif').style.display = 'block';
-    document.querySelector('.detection').style.display = 'none';
-    
-    // Show DetectionGreen with a fade-in transition
-    const detectionGreen = document.querySelector('.DetectionGreen');
-    detectionGreen.style.display = 'block';
-    setTimeout(() => {
-        detectionGreen.style.opacity = '1';
-    }, 10); // Slight delay to ensure the display is set before the transition
+        setTimeout(() => {
+            detectionGreen.style.opacity = '1';
+        }, 10);
+
+        takeSelfieButton.textContent = 'Take Another';
+    } else {
+        heroFaceElement.classList.remove('animate-border');
+        tickGif.style.display = 'none';
+        detection.style.display = 'block';
+        detectionGreen.style.display = 'none';
+        detectionGreen.style.opacity = '0';
+
+        takeSelfieButton.textContent = 'Take Selfie';
+    }
 });
+
 
 
 
@@ -50,5 +62,21 @@ function handleResponsiveLayout() {
 // Trigger on page load and window resize
 window.addEventListener('load', handleResponsiveLayout);
 window.addEventListener('resize', handleResponsiveLayout);
+
+
+const cameraFeed = document.getElementById('camera-feed');
+
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+            cameraFeed.srcObject = stream;
+        })
+        .catch(function(error) {
+            console.error("Camera access denied or not available: ", error);
+        });
+} else {
+    console.error("getUserMedia not supported on your browser!");
+}
+
 
   
