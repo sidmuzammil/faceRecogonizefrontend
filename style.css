@@ -21,18 +21,18 @@ p {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
 }
-.left-sid {
+.left-side {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-right: 1px solid rgba(0, 0, 0, 0.215);
 }
-.left-sid p {
+.left-side p {
   margin-bottom: 2em;
   margin-top: 1em;
 }
-.left-sid h2 {
+.left-side h2 {
   font-weight: 500;
 }
 .HeroFace {
@@ -76,7 +76,7 @@ p {
 .HeroFace.animate-border {
     animation: border-animation 2s forwards;
   }
- /* .left-sid .HeroImage{
+ /* .left-side .HeroImage{
   width: 36%;
   height: 50%;
   border-radius: 50%;
@@ -85,7 +85,7 @@ p {
   background-position: center;
   background-repeat: no-repeat;
  } */
-.left-sid button {
+.left-side button {
   padding: 1em;
   width: 10em;
   border-radius: 0.5em;
@@ -96,7 +96,7 @@ p {
   border: none;
   transition: 0.3s ease-in-out;
 }
-.left-sid button:focus {
+.left-side button:focus {
   background-color: transparent;
   color: #4e9459;
   border: 2px solid #4e9459;
@@ -111,6 +111,19 @@ p {
   justify-content: space-between;
   padding-top: 10%;
 }
+.notification {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Make sure it's above other content */
+}
+
 .RightHeading-section {
   display: flex;
   flex-direction: column;
@@ -261,7 +274,7 @@ p {
       align-items: center;
       justify-content: center;
     }
-    .left-sid{
+    .left-side{
         border: none;
         text-align: center;
         display: none;
