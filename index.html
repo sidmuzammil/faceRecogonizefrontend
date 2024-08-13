@@ -18,26 +18,54 @@
       <div class="left-side">
         <h2>Find Your Wedding Photos</h2>
         <p>Click below to take a selfie. We'll find your photos using AI!</p>
-        <div class="HeroFace">
-            <!-- <img src="./assets/Hero.png" alt=""class="HeroImage"/> -->
-         <img src="./assets/TickIcon.gif" alt="" class="tickGif">
-         <img src="./assets/FaceDEtection.svg" alt="" class="detection">
-         <img src="./assets/FaceDEtectiongreen.png" alt="" class="DetectionGreen">
+        <div class="HeroArea">
+          <div class="HeroFace">
+            <img src="./assets/Hero.png" alt="" class="HeroImage" />
+          </div>
+          <!-- <img src="./assets/Tick.svg" alt="" class="tickGif"> -->
+          <div class="tickGif">
+            <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+              <g
+                stroke="white"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path class="tick" d="M6.5 13.5L10 17 l8.808621-8.308621" />
+              </g>
+            </svg>
+          </div>
+          <img src="./assets/FaceDEtection.svg" alt="" class="detection" />
+          <img
+            src="./assets/FaceDEtectiongreen.png"
+            alt=""
+            class="DetectionGreen"
+          />
         </div>
-        
-        <button >Take Selfie</button>
+
+        <button>Take Selfie</button>
       </div>
+
+      <!-- right container start here -->
+
       <div class="Right-side">
+        <button class="BackArrow">
+          <img src="./assets/leftArrowIcon.png" alt="" />
+        </button>
         <div class="notification">Scanning your face...</div>
         <div class="RightHeading-section">
           <h2>See how this magic works</h2>
-          <p>Discover and Organize Your Photos <br> with  AI-Powered Search</p>
+          <p>
+            Discover and Organize Your Photos <br />
+            with AI-Powered Search
+          </p>
         </div>
         <div class="scanning-section">
           <div class="ocrloader">
-            <!-- <p>Scanning</p> -->
             <em></em>
-            <video id="camera-feed" autoplay></video>
+            <video src="./assets/ScanVideo.mp4" autoplay muted loop></video>
             <span></span>
           </div>
         </div>
