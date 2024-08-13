@@ -1,94 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Celebrere Face Detection</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body>
-    <div class="Main-Container">
-      <div class="left-side">
-        <h2>Find Your Wedding Photos</h2>
-        <p>Click below to take a selfie. We'll find your photos using AI!</p>
-        <div class="HeroArea">
-          <div class="HeroFace">
-            <img src="./assets/Hero.png" alt="" class="HeroImage" />
-          </div>
-          <!-- <img src="./assets/Tick.svg" alt="" class="tickGif"> -->
-          <div class="tickGif">
-            <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
-              <g
-                stroke="white"
-                stroke-width="3"
-                fill="none"
-                fill-rule="evenodd"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path class="tick" d="M6.5 13.5L10 17 l8.808621-8.308621" />
-              </g>
-            </svg>
-          </div>
-          <img src="./assets/FaceDEtection.svg" alt="" class="detection" />
-          <img
-            src="./assets/FaceDEtectiongreen.png"
-            alt=""
-            class="DetectionGreen"
-          />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <title>Celebrere Face Detection</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="Main-Container">
+    <div class="left-side">
+      <h2>Find Your Wedding Photos</h2>
+      <p>Click below to take a selfie. We'll find your photos using AI!</p>
+      <div class="HeroArea">
+        <div class="HeroFace">
+          <img src="./assets/Hero.png" alt="" class="HeroImage" />
         </div>
-
-        <button>Take Selfie</button>
+        <!-- <img src="./assets/Tick.svg" alt="" class="tickGif"> -->
+        <div class="tickGif">
+          <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="white" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+              <path class="tick" d="M6.5 13.5L10 17 l8.808621-8.308621"/>
+            </g>
+          </svg>
+        </div>
+        <img src="./assets/FaceDEtection.svg" alt="" class="detection" />
+        <img src="./assets/FaceDEtectiongreen.png" alt="" class="DetectionGreen" />
       </div>
 
-      <!-- right container start here -->
+      <button>Take Selfie</button>
+    </div>
 
-      <div class="Right-side">
-        <button class="BackArrow">
-          <img src="./assets/leftArrowIcon.png" alt="" />
-        </button>
-        <div class="notification">Scanning your face...</div>
-        <div class="RightHeading-section">
-          <h2>See how this magic works</h2>
-          <p>
-            Discover and Organize Your Photos <br />
-            with AI-Powered Search
-          </p>
+    <!-- right container start here -->
+
+    <div class="Right-side">
+      <button class="BackArrow">
+        <img src="./assets/leftArrowIcon.png" alt="" />
+      </button>
+      <div class="notification">Scanning your face...</div>
+      <div class="RightHeading-section">
+        <h2>See how this magic works</h2>
+        <p>
+          Discover and Organize Your Photos <br />
+          with AI-Powered Search
+        </p>
+      </div>
+      <div class="scanning-section">
+        <div class="ocrloader">
+          <em></em>
+          <video src="./assets/ScanVideo.mp4" autoplay muted loop></video>
+          <span></span>
         </div>
-        <div class="scanning-section">
-          <div class="ocrloader">
-            <em></em>
-            <video src="./assets/ScanVideo.mp4" autoplay muted loop></video>
-            <span></span>
-          </div>
+      </div>
+      <!-- <h3>Follow these guidelines:</h3> -->
+      <div class="Alert-section">
+        
+        <div class="AlertItems">
+          <img src="/assets/OnlyFaceAlert.png" alt="Only one face" />
+          <p>Only 1 Face</p>
         </div>
-        <div class="Alert-section">
-          <div class="AlertItems">
-            <img src="/assets/OnlyFaceAlert.png" alt="Only one face" />
-            <p>Only 1 Face</p>
-          </div>
-          <div class="AlertItems">
-            <img src="/assets/NoMaskAlert.png" alt="No use of mask" />
-            <p>No Mask</p>
-          </div>
-          <div class="AlertItems">
-            <img src="/assets/NoBlurAlert.png" alt="No Blur Your Face" />
-            <p>No Blur</p>
-          </div>
-          <div class="AlertItems">
-            <img src="/assets/NosunglassAlert.png" alt="Dont use Sunglass" />
-            <p>No Spectacles</p>
-          </div>
+        <div class="AlertItems">
+          <img src="/assets/NoMaskAlert.png" alt="No use of mask" />
+          <p>No Mask</p>
+        </div>
+        <div class="AlertItems">
+          <img src="/assets/NoBlurAlert.png" alt="No Blur Your Face" />
+          <p>No Blur</p>
+        </div>
+        <div class="AlertItems">
+          <img src="/assets/NosunglassAlert.png" alt="Dont use Sunglass" />
+          <p>No Spectacles</p>
         </div>
       </div>
     </div>
-    <script src="./script.js"></script>
-  </body>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
 </html>

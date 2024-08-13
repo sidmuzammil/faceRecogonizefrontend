@@ -56,7 +56,7 @@ function handleResponsiveLayout() {
             leftSide.style.opacity = '1';
             leftSide.style.transition = 'opacity 0.5s ease-in-out';
             backArrowButton.style.display = 'block';  
-        }, 6000);
+        }, 600);
     } else {
         rightSide.style.display = 'flex';
         leftSide.style.display = 'flex';

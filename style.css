@@ -3,12 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Typography */
 h2 {
-  font-weight: bold;
+  
+  font-weight: 500;
   font-size: 24px;
   word-spacing: 2%;
 }
@@ -38,10 +39,6 @@ p {
   padding: 2em; 
 }
 
-.left-side h2 {
-  font-weight: 500;
-}
-
 .left-side p {
   margin-bottom: 2em;
   margin-top: 1em;
@@ -51,24 +48,29 @@ p {
 .HeroArea {
   position: relative;
   display: flex;
+  height: 100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: transparent;
+  background-color: red;
   border: none;
+  
+
 }
 
 /* Hero Face */
 .HeroFace img {
-  width: 80%;
-  height: calc(100% * (7 / 8)); 
+  width: 60%;
+  height: calc(60% * (5 / 6)); 
   border-radius: 50%; 
   border: .3em solid rgb(255, 255, 255);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.HeroFace.animate-border {
-  animation: border-animation 2s forwards;
+.HeroFace img.border-color-change {
+  border: .4em solid transparent; 
+  animation: border-color-animation 3s linear forwards;
 }
 
 /* Tick Gif */
@@ -87,21 +89,22 @@ p {
 .tick {
   stroke-dasharray: 18;
   stroke-dashoffset: 18;
-  animation: draw 1s forwards 1s;
+  animation: draw 2s forwards 1s infinite;
+  transition: 1s ease-in-out;
 }
 
 /* Detection Images */
 .detection {
-  height: 22em;
-  width: 20em;
+  height: 15em;
+  /* width: 20em; */
   display: block;
   position: absolute;
   z-index: 99;
 }
 
 .DetectionGreen {
-  height: 22em;
-  width: 20em;
+  height: 15em;
+  /* width: 20em; */
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -128,7 +131,10 @@ p {
   border: 2px solid #4e9459;
 }
 
-/* Right Side */
+
+
+
+/* Right Side beginning Here */
 
 
 
@@ -138,7 +144,8 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10%;
+  padding-top: 14%;
+  /* padding-bottom: 5%; */
 }
 
 .notification {
@@ -184,6 +191,13 @@ p {
 }
 
 /* Scanner Animation */
+.scanning-section{
+ height: 100%;
+ display: flex;
+ justify-content: space-evenly;
+ flex-direction: column;
+ text-align: center;
+}
 .ocrloader {
   width: 260px;
   height: 320px;
@@ -192,6 +206,7 @@ p {
   position: absolute;
   overflow: hidden;
   top: 30%;
+  z-index: 99;
 }
 
 .ocrloader video {
@@ -216,6 +231,46 @@ p {
   transform: translateY(98px);
   animation: move 1.7s cubic-bezier(0.15, 0.54, 0.76, 0.74);
   animation-iteration-count: infinite;
+}
+.ocrloader:before,
+.ocrloader:after,
+.ocrloader em:after,
+.ocrloader em:before {
+  border-color: #4e9459;
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 46px;
+  border-style: solid;
+  border-width: 0px;
+}
+.ocrloader:before {
+  left: 0;
+  top: 0;
+  border-left-width: 5px;
+  border-top-width: 5px;
+  border-radius: 5px 0 0 0;
+}
+.ocrloader:after {
+  right: 0;
+  top: 0;
+  border-right-width: 5px;
+  border-top-width: 5px;
+  border-radius: 0 5px 0 0;
+}
+.ocrloader em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 5px;
+  border-bottom-width: 5px;
+  border-radius: 0 0 0 5px;
+}
+.ocrloader em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  border-radius: 0 0 5px 0;
 }
 
 /* Arrow Button */
@@ -264,8 +319,28 @@ p {
   }
 }
 
+@keyframes border-color-animation {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4e9459;
+  }
+  100% {
+    border-color: #4E9459;
+  }
+}
+
 @keyframes draw { 
-  to { stroke-dashoffset: 0 } 
+  100% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  0% {
+    stroke-dashoffset: 18;
+  }
 }
 
 /* Responsive Styles */
@@ -296,12 +371,18 @@ p {
     margin: 0;
     width: auto;
   }
+  .Alert-section{
+    padding-top: -10%;
+  }
 
   .Right-side {
     height: 100vh;
-    justify-content: space-around;
-    padding-top: 0;
+    justify-content: space-between;
+    /* padding: 20% 0%; */
+    padding-top:20% ;
+    padding-bottom: 35%;
     display: flex;
+    
   }
 
   .Right-side .Alert-section {
@@ -317,12 +398,15 @@ p {
   }
 
   .AlertItems img {
-    width: 3em;
+    width: 5em;
   }  
 
   .detection, .DetectionGreen {
     width: 20em;
     height: 22em;
+  }
+  .scanning-section{
+    margin-bottom: 12%;
   }
 }
 
@@ -330,6 +414,15 @@ p {
   .HeroFace img {
     width: 100%;
   }
+  .Right-side .Alert-section {
+    padding-left: 0;
+    padding-right: 0;
+    gap: 1em;
+  }
+
+  .AlertItems img {
+    width: 3em;
+  }  
 
   .detection, .DetectionGreen {
     width: 14em;
