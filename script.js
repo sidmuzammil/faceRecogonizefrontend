@@ -79,3 +79,41 @@ backArrowButton.addEventListener('click', function() {
 window.addEventListener('load', handleResponsiveLayout);
 window.addEventListener('resize', handleResponsiveLayout);
 
+
+// function handleResponsiveLayout() {
+//     const leftSide = document.querySelector('.left-side');
+//     const rightSide = document.querySelector('.Right-side');
+
+//     if (window.innerWidth <= 1025) {
+//         rightSide.classList.add('slide-out');
+//         rightSide.classList.remove('visible');
+//         leftSide.classList.add('visible');
+//         leftSide.classList.remove('hidden-left');
+
+//         setTimeout(() => {
+//             rightSide.classList.add('hidden');
+//             rightSide.classList.remove('slide-out');
+//         }, 500); // This should match your CSS transition duration
+//     } else {
+//         rightSide.classList.add('visible');
+//         rightSide.classList.remove('hidden');
+//         leftSide.classList.add('visible');
+//         leftSide.classList.remove('hidden-left');
+//     }
+// }
+
+// backArrowButton.addEventListener('click', function() {
+//     const leftSide = document.querySelector('.left-side');
+//     const rightSide = document.querySelector('.Right-side');
+
+//     if (window.innerWidth <= 1025) {
+//         leftSide.classList.add('hidden-left');
+//         leftSide.classList.remove('visible');
+//         rightSide.classList.add('visible');
+//         rightSide.classList.remove('hidden');
+//         backArrowButton.style.display = 'none'; 
+//     }
+// });
+
+// window.addEventListener('load', handleResponsiveLayout);
+// window.addEventListener('resize', handleResponsiveLayout);

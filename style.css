@@ -28,6 +28,9 @@ p {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
 }
+.left-side, .Right-side {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
 
 /* Left Side */
 .left-side {
@@ -37,7 +40,6 @@ p {
   justify-content: center;
   border-right: 1px solid rgba(0, 0, 0, 0.215);
   padding: 2em; 
-  transition: 1s ease-in-out;
 }
 
 .left-side p {
@@ -145,7 +147,7 @@ p {
   align-items: center;
   justify-content: space-between;
   padding-top: 14%;
-  /* padding-bottom: 5%; */
+  
 }
 
 .notification {
@@ -194,7 +196,6 @@ p {
 .scanning-section{
  height: 100%;
  display: flex;
- justify-content: space-evenly;
  flex-direction: column;
  text-align: center;
 }
@@ -351,17 +352,19 @@ p {
     align-items: center;
     justify-content: center;
   }
-  /* .HeroArea{
-    padding: 15em;
-    
+  /* .left-side, .Right-side {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
   } */
 
   .left-side {
     border: none;
     text-align: center;
-    display: none;
+    display: flex;
     opacity: 0; 
-    transition: opacity 1s ease-in-out;
+    /* transform: translateX(100%);  */
  
   }
 
@@ -370,7 +373,7 @@ p {
   }
 
   .Right-side {
-    height: 100vh;
+     height: 100vh;
     justify-content: space-between;
     padding-top:20% ;
     padding-bottom: 35%;
@@ -386,7 +389,7 @@ p {
   .ocrloader {
     width: 260px;
     height: 295px;
-    display: block;
+    
   }
 
   .AlertItems img {
@@ -410,11 +413,12 @@ p {
     width: 100%;
   }
 
-  .Right-side .Alert-section {
+
+  /* .Right-side .Alert-section {
     padding-left: 0;
     padding-right: 0;
     gap: 1em;
-  }
+  } */
 
   .AlertItems img {
     width: 3em;
@@ -453,3 +457,22 @@ p {
 
 
 
+/* .Right-side.hidden {
+  opacity: 0;
+  transform: translateX(-100%); 
+}
+
+.left-side.hidden {
+  opacity: 0;
+  transform: translateX(100%); 
+}
+
+.left-side.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Right-side.visible {
+  opacity: 1;
+  transform: translateX(0); 
+} */
