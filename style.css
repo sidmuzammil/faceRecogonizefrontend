@@ -40,15 +40,6 @@ p {
   justify-content: center;
   border-right: 1px solid rgba(0, 0, 0, 0.215);
 }
-/* .left-side .leftHedingsection{
-  margin-top: 10em;
-} */
-
-/* .left-side p {
-  margin-bottom: 2em;
-  margin-top: 1em;
-} */
-
 
 /* Hero Face */
 .leftHedingsection{
@@ -73,6 +64,7 @@ p {
   border: .2em solid transparent; 
   animation: border-color-animation 3s linear forwards;
 }
+ 
 .detection-area{
   position: absolute;
   display: flex;
@@ -107,13 +99,14 @@ p {
   z-index: 999;
   padding: .3em;
   opacity: 0;
+  transition: opacity 0.5s ease-in; 
 }
 
 .tick {
   stroke-dasharray: 18;
   stroke-dashoffset: 18;
   animation: draw 2s forwards 1s infinite;
-  transition: 1s ease-in-out;
+  transition: 1s ease-in;
 }
 
 
@@ -261,8 +254,6 @@ p {
     text-align: center;
     display: none;
     opacity: 0; 
-
- 
   }
 
   .Alert-section{
@@ -292,12 +283,6 @@ p {
 }
 
 @media screen and (max-width: 740px) {
-  .HeroArea{
-    padding: 1em;
-  }
-  .HeroFace img {
-    width: 100%;
-  }
   .AlertItems img {
     width: 3em;
   }  

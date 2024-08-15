@@ -5,12 +5,10 @@ const detection = document.querySelector('.detection');
 const detectionGreen = document.querySelector('.DetectionGreen');
 const notification = document.querySelector('.notification');
 
-
 takeSelfieButton.addEventListener('click', function() {
     if (takeSelfieButton.textContent === 'Take Selfie') {
         heroFaceElement.classList.add('animate-border');
-        heroFaceElement.classList.add('border-color-change'); // Add this class
-        tickGif.style.opacity = '1';
+        heroFaceElement.classList.add('border-color-change');
         detection.style.display = 'none';
         detectionGreen.style.display = 'block';
         takeSelfieButton.style.backgroundColor = "#fff";
@@ -20,6 +18,9 @@ takeSelfieButton.addEventListener('click', function() {
         setTimeout(() => {
             detectionGreen.style.opacity = '1';
         }, 10);
+        setTimeout(() => {
+            tickGif.style.opacity = '1';
+        }, 2000); //this is the tick mark dely
 
         takeSelfieButton.textContent = 'Take Another';
         notification.style.display = 'block';
@@ -28,8 +29,8 @@ takeSelfieButton.addEventListener('click', function() {
         }, 1000);
     } else {
         heroFaceElement.classList.remove('animate-border');
-        heroFaceElement.classList.remove('border-color-change'); // Remove this class
-        tickGif.style.opacity = '0';
+        heroFaceElement.classList.remove('border-color-change');
+        tickGif.style.opacity = '0'; 
         detection.style.display = 'block';
         detectionGreen.style.display = 'none';
         detectionGreen.style.opacity = '0';
@@ -39,7 +40,6 @@ takeSelfieButton.addEventListener('click', function() {
         takeSelfieButton.textContent = 'Take Selfie';
     }
 });
-
 
 function handleResponsiveLayout() {
     const leftSide = document.querySelector('.left-side');
@@ -66,7 +66,3 @@ function handleResponsiveLayout() {
 
 window.addEventListener('load', handleResponsiveLayout);
 window.addEventListener('resize', handleResponsiveLayout);
-
-
-
-
