@@ -24,6 +24,7 @@ takeSelfieButton.addEventListener('click', function() {
 
         takeSelfieButton.textContent = 'Take Another';
         notification.style.display = 'block';
+        heroFaceElement.style.padding="0.3em"
         setTimeout(() => {
             notification.style.display = 'none';
         }, 1000);
@@ -36,7 +37,7 @@ takeSelfieButton.addEventListener('click', function() {
         detectionGreen.style.opacity = '0';
         takeSelfieButton.style.backgroundColor = "#4e9459";
         takeSelfieButton.style.color = "#fff";
-
+       heroFaceElement.style.padding="0em"
         takeSelfieButton.textContent = 'Take Selfie';
     }
 });
