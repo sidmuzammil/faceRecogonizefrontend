@@ -58,6 +58,7 @@ p {
   border-radius: 50%; 
   border: .2em solid rgb(255, 255, 255);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: .3em;
 }
 
 .HeroFace .HeroImage.border-color-change {
@@ -92,12 +93,13 @@ p {
 .tickGif {
   width: 2em;
   height: 2em;
+  border: .2em solid #fff;
   background-color: #4E9459;
   border-radius: 50%;
   position: absolute;
   bottom: -.8em;
   z-index: 999;
-  padding: .3em;
+  /* padding: .3em; */
   opacity: 0;
   transition: opacity 0.5s ease-in; 
 }
